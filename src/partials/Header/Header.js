@@ -8,9 +8,12 @@ import {
   IconButton,
 } from '@mui/material'
 
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu'
+import useStyles from './Header.style'
 
 const Header = () => {
+  const classes = useStyles()
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -23,7 +26,7 @@ const Header = () => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" className={classes.title}>
           News
         </Typography>
         <Button color="inherit">Login</Button>
