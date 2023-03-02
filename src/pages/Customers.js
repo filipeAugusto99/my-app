@@ -36,9 +36,7 @@ const Customers = () => {
   //XL = EXTRA LARGE
 
   return (
-    <>
-      <h1>Customers</h1>
-      <Grid container>
+    <Grid container>
       {
         customers.map(item => (
           <Grid item xs={12} md={4}>
@@ -52,8 +50,7 @@ const Customers = () => {
           </Grid>
         ))
       }
-      </Grid>
-    </>
+    </Grid>
   )
 }
 
