@@ -16,8 +16,8 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
           <Route path="/customers">
             <TemplatePage title="Clientes" Component={Customers} />
@@ -26,8 +26,8 @@ const App = () => {
             <TemplatePage title="Página Inicial" Component={Home} />
           </Route>
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   )
 }
 
