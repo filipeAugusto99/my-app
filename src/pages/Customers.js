@@ -28,12 +28,14 @@ const Customers = () => {
       })
   }, [])
   
-  //tamanhos de telas do menor para o maior.
-  //XS = EXTRA SMALL
-  //SM = SMALL
-  //MD = MEDIUM
-  //LG = LARGE
-  //XL = EXTRA LARGE
+  const handleRemoveCustomer = ( id ) => {
+    axios.delete(`https://reqres.in/api/users/${id}`)
+      .then(() => {
+        const newCustomerState = customers.filter(customer => customer.id !== id)
+
+        setCustomers(newCustomerState)
+      })
+  }
 
   return (
     <Grid container>
@@ -41,11 +43,13 @@ const Customers = () => {
         customers.map(item => (
           <Grid item xs={12} md={4}>
             <CustomersCard
+              id={item.id}
               name={item.first_name}
               lastname={item.last_name}
               email={item.email}
               avatar={item.avatar}
               className={classes.card}
+              onRemoveCustomer={handleRemoveCustomer}
             />
           </Grid>
         ))
