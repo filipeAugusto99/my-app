@@ -21,7 +21,7 @@ const App = () => {
       <TemplateDefault>
         <Switch>
           <Route path="/customers/add">
-            <TemplatePage title="Clientes" Component={CustomersRegister} />
+            <TemplatePage title="Cadastro de Clientes" Component={CustomersRegister} />
           </Route>
           <Route path="/customers">
             <TemplatePage title="Clientes" Component={Customers} />
