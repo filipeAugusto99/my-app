@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { makeStyles } from '@mui/styles'
+
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
+import Toasty from '../../components/Toasty'
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -94,8 +97,11 @@ const Register = () => {
           onChange={handleInputChange}/>
       </div>
       <div className={classes.wrapper}>
-        <Button variant="contained" color="primary" onClick={handleRegisterButton}>Confirmar</Button>
+        <Button variant="contained" color="primary" onClick={handleRegisterButton}>
+          Cadastrar
+        </Button>
       </div>
+      <Toasty open />
     </>
   )
 }
