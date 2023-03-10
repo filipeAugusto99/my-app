@@ -1,11 +1,11 @@
 
 import {
   Snackbar,
-} from '@mui/material/Button'
+} from '@mui/material'
 
 import MuiAlert from '@mui/material/Alert'
 
-const Toasty = ({ open, onClose }) => {
+const Toasty = ({ open, text, severity, onClose }) => {
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -17,16 +17,18 @@ const Toasty = ({ open, onClose }) => {
 
   return (
     <Snackbar
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'left',
+      }}
       open={open}
       autoHideDuration={6000}
       onClose={handleClose}
-      message="Note archived"
-      action={
-        <>
-          <MuiAlert elevation={6} variant="filled" severity="success" />
-        </>
-      }
-    />
+      >
+      <MuiAlert elevation={6} variant="filled" severity={severity}>
+        {text}
+      </MuiAlert>
+    </Snackbar>
   )
 }
 
