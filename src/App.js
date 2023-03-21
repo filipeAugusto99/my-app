@@ -9,18 +9,23 @@ import {
 //templates
 import TemplateDefault from './templates/Default'
 import TemplatePage from './templates/Page'
+import TemplateClean from './templates/Clean'
 
 //componentes
 import Customers from './pages/customers/List'
 import CustomersRegister from './pages/customers/Register'
 import CustomersEdit from './pages/customers/Edit'
 import Home from './pages/Home'
+import Login from './pages/Login'
 
 const App = () => {
   return (
     <Router>
-      <TemplateDefault>
-        <Switch>
+      <Switch>
+        <Route path="/login">
+          <TemplateClean title="Acesso Restrito" Component={Login} />
+        </Route>
+        <TemplateDefault>
           <Route path="/customers/edit/:id">
             <TemplatePage title="Editar Cliente" Component={CustomersEdit} />
           </Route>
@@ -33,8 +38,8 @@ const App = () => {
           <Route path="/">
             <TemplatePage title="Página Inicial" Component={Home} />
           </Route>
-        </Switch>
-      </TemplateDefault>
+        </ TemplateDefault>
+      </Switch>
     </Router>
   )
 }
